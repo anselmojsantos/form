@@ -1,0 +1,90 @@
+:root{
+    --primary-color:#7e6b97;
+    --bg-color:#200e29;
+    --text-color:#ffffff;
+    --ligth-color:rgba(255, 255,255,0.04);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: "Roboto", sans-serif;
+    height: 100%;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background:linear-gradient(-90deg, #1d46f5 0%, #6809dc 100%);
+    color: var(--text-color);
+}
+
+form{
+    background:rgba(54, 9, 75, 0.24);
+    border: solid #5f19e0;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 500px;
+    display:flex;
+    flex-direction: column;
+    margin:32px auto;
+    padding:32px 64px;
+}
+form h2{
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+div.input{
+    margin-bottom: 24px;
+    position: relative;
+}
+input, button{
+    -moz-appearence:none;
+    -webkit-appearence:none;
+    appearance:none;
+    width:100%;
+    padding:16px 0;
+    border:none;
+    border-bottom: 1px solid var(--primary-color);
+    background-color: transparent;
+    outline: none;
+    color:var(--text-color);
+    font-size: 1em;
+}
+button{
+    margin-top: 16px;
+    background:linear-gradient(-90deg, #1d46f5 0%, #6809dc 100%);
+    box-shadow: 1px 2px 6.65px 0.35px rgb(0 0 0 / 30%);
+    border-radius: 5px;
+    cursor: pointer;
+}
+input ~ label{
+    position: absolute;
+    top:16px;
+    left: 0px;
+    color:rgba(255, 255, 255, 0.9);
+    transition: .4s;
+}
+input:focus ~ label,
+input:valid ~ label{
+    transform: translateY(-24px);
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+}
+.input span.error{
+    display:flex;
+    padding: 0;
+    background-color:rgba(71, 18, 18, 0.349);
+    transition: all ease-in 0.10s;
+}
+.input span.error.active{
+    border: 1px solid red;
+    padding:0.4em;
+}
